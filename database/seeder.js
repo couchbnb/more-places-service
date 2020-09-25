@@ -3,7 +3,6 @@ const faker = require('faker');
 
 mongoose.connect('mongodb://localhost/couchbnb', { useNewUrlParser: true, });
 
-
 let hostSchema = mongoose.Schema({
     roomid: {
         type: Number,
@@ -50,8 +49,6 @@ for (let i = 1; i < 101; i++) {
         records.host.push(singHost)
     }
 
-
-
     records.save((err) => {
         if (err) { console.log(err) }
         else {
@@ -60,18 +57,3 @@ for (let i = 1; i < 101; i++) {
     })
 }
 
-
-
-
-
-
-
-// },
-// superhost: {
-//     type: Boolean,
-//     required: false,
-// },
-// heart: {
-//     type: Boolean,
-//     required: false,
-// },
