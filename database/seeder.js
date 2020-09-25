@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
+mongoose.connect('mongodb://localhost/couchbnb');
 
-mongoose.connect('mongodb://localhost/couchbnb', { useNewUrlParser: true, });
 
 let hostSchema = mongoose.Schema({
     roomid: {
@@ -51,9 +51,17 @@ for (let i = 1; i < 101; i++) {
 
     records.save((err) => {
         if (err) { console.log(err) }
-        else {
-            console.log('saved')
-        }
+        // else {
+        //     console.log('saved')
+        // }
     })
 }
 
+
+let getInfo = (cb) => {
+    Host.find().exec(cb)
+}
+
+module.exports = {
+    getInfo
+}
