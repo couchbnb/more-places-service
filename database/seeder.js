@@ -58,7 +58,7 @@ for (let i = 1; i < 101; i++) {
 }
 
 
-let getInfo = (cb) => {
+let getInfo = (room, cb) => {
     Host.find().exec(cb)
 }
 

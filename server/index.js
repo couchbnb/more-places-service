@@ -9,14 +9,14 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname + '/../client/dist'));
 
 
-app.get('/couchbnb', function (req, res) {
-    db.getInfo({}, (err, response) => {
+app.get('/rooms', function (req, res) {
+    db.getInfo({}, (err, data) => {
         if (err) {
-            console.log(err)
+            console.log('err')
             res.status(400).send()
         }
-        console.log('resp: ', response)
-        res.status(200).send(response)
+        console.log('data: ', data)
+        res.status(200).send(data)
 
     })
 });
