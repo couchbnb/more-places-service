@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
-
-mongoose.connect('mongodb://localhost/couchbnb', { useNewUrlParser: true, });
+mongoose.connect('mongodb://localhost/couchbnb');
 
 
 let hostSchema = mongoose.Schema({
@@ -50,28 +49,19 @@ for (let i = 1; i < 101; i++) {
         records.host.push(singHost)
     }
 
-
-
     records.save((err) => {
         if (err) { console.log(err) }
-        else {
-            console.log('saved')
-        }
+        // else {
+        //     console.log('saved')
+        // }
     })
 }
 
 
+let getInfo = (cb) => {
+    Host.find().exec(cb)
+}
 
-
-
-
-
-// },
-// superhost: {
-//     type: Boolean,
-//     required: false,
-// },
-// heart: {
-//     type: Boolean,
-//     required: false,
-// },
+module.exports = {
+    getInfo
+}
