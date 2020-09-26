@@ -47,7 +47,7 @@ for (let i = 1; i < 101; i += 1) {
         };
 
         records.host.push(singHost),
-    };
+    }
 
     records.save((err) => {
         if (err) { console.log(err) }
@@ -58,10 +58,8 @@ for (let i = 1; i < 101; i += 1) {
 }
 
 
-const getInfo = (room, cb) => {
-    Host.find().exec(cb)
-}
+
 
 module.exports = {
-    getInfo,
+    Host
 }
