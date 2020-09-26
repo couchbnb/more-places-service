@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div id="picture"></div>
-        <div id="rate"></div>
+        <div id="picture" />
+        <div id="rate" />
       </div>
     );
   }
