@@ -1,52 +1,52 @@
+/* eslint-disable indent */
 const mongoose = require('mongoose');
 const faker = require('faker');
+
 mongoose.connect('mongodb://localhost/couchbnb');
 
-
-let hostSchema = mongoose.Schema({
+const hostSchema = mongoose.Schema({
     roomid: {
         type: Number,
     },
     host: {
-        type: Array
-    }
+        type: Array,
+    },
 });
 
+const Host = mongoose.model('Host', hostSchema);
 
-let Host = mongoose.model('Host', hostSchema);
-
-for (let i = 1; i < 101; i++) {
-    let records = new Host({
+for (let i = 1; i < 101; i += 1) {
+    const records = new Host({
         roomid: i,
-        host: []
+        host: [],
 
-    })
+    });
 
-    for (let i = 0; i < 12; i++) {
-        let singHost = {
+    for (let j = 0; j < 12; j += 1) {
+        const singHost = {
             picture: `https://couchbnbpic.s3-us-west-1.amazonaws.com/pics/couchbnb_pic/${i}.jpg`,
             star: faker.random.number({
-                'min': 1,
-                'max': 5,
-                'precision': 0.1
+                min: 1,
+                max: 5,
+                precision: 0.1,
             }),
             review: faker.random.number({
-                'min': 4,
-                'max': 200
+                min: 4,
+                max: 200,
             }),
             description: 'Entire House 4beds',
             name: 'VESTA - El Gouna Residence',
 
             price: faker.commerce.price(100, 1000),
             superhost: {
-                default: false
+                default: false,
             },
             heart: {
-                default: false
-            }
-        }
+                default: false,
+            },
+        };
 
-        records.host.push(singHost)
+        records.host.push(singHost),
     }
 
     records.save((err) => {
@@ -58,10 +58,8 @@ for (let i = 1; i < 101; i++) {
 }
 
 
-let getInfo = (cb) => {
-    Host.find().exec(cb)
-}
+
 
 module.exports = {
-    getInfo
+    Host
 }
