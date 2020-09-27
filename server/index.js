@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.get('/rooms', (req, res) => {
   db.getInfo({}, (err, data) => {
       if (err) {
-            console.log('err');
+        console.log('err');
             res.status(400).send();
         }
         console.log('data: ', data)
