@@ -1,32 +1,40 @@
 const express = require('express');
-let app = express();
+
+const app = express();
+// eslint-disable-next-line import/no-extraneous-dependencies
+const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 
-var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(`${__dirname}/../client/dist`));
 
-
-app.get('/rooms', (req, res) => {
+app.get('/data', (req, res) => {
   db.getInfo({}, (err, data) => {
-      if (err) {
-        console.log('err');
-            res.status(400).send();
-        }
-        console.log('data: ', data)
-        res.status(200).send(data),
-
-);
+    if (err) {
+        console.log('err in server')
+      res.status(400).send();
+    } else {
+      res.status(200).send(data);
+      console.log('server: ', data)
+    }
+  });
 });
+// app.get('/rooms', (req, res) => {
+//   db.getInfo({}, (err, data) => {
+//     if (err) {
+//       console.log('err');
+//       res.status(400).send();
+//     } else {
+//       console.log('data: ', data),
+//       res.status(200).send(data),
+//     }
+//   })
+// });
 
-
-let port = 1128;
+const port = 1128;
 
 app.listen(port, () => {
-    console.log(`listening on port ${port}`);
+  console.log(`listening on port ${port}`);
 });
-
-
-
