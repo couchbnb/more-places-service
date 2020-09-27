@@ -1,11 +1,15 @@
 import React from 'react';
+import Item from './Item.jsx';
 
-const List = () => {
-
-    return(
-<h3>Hello from List file</h3>
-    );
-}
-
+const List = ({data}) => {
+//   let {data} = props;
+//   const { data } = props;
+  console.log('data: ', data);
+  return (
+    <ul>
+      {data.map((item, index) => <Item item={item} key={index} />)}
+    </ul>
+  );
+};
 
 export default List;
