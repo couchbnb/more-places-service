@@ -15,14 +15,14 @@ const hostSchema = mongoose.Schema({
 
 const Host = mongoose.model('Host', hostSchema);
 
-for (let i = 1; i < 101; i += 1) {
+for (let i = 1; i < 3; i += 1) {
     const records = new Host({
         roomid: i,
         host: [],
 
     });
 
-    for (let j = 0; j < 12; j += 1) {
+    for (let j = 0; j < 2; j += 1) {
         const singHost = {
             picture: `https://couchbnbpic.s3-us-west-1.amazonaws.com/pics/couchbnb_pic/${i}.jpg`,
             star: faker.random.number({
@@ -46,20 +46,19 @@ for (let i = 1; i < 101; i += 1) {
             },
         };
 
-        records.host.push(singHost),
+        records.host.push(singHost);
     }
 
-    records.save((err) => {
-        if (err) { console.log(err) }
-        // else {
-        //     console.log('saved')
-        // }
-    })
+    // records.save((err) => {
+    //     if (err) {
+    //         console.log(err);
+    //     }
+    //     // else {
+    //     //     console.log('saved')
+    //     // }
+    // });
 }
-
-
-
 
 module.exports = {
     Host
-}
+};
