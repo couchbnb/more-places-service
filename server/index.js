@@ -11,13 +11,14 @@ app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/../client/dist`));
 
 app.get('/data', (req, res) => {
-  db.getInfo({}, (err, data) => {
+// console.log(req.query);
+  db.getInfo(req.query, (err, data) => {
     if (err) {
-        console.log('err in server')
+    // console.log('err in server')
       res.status(400).send();
     } else {
-      res.status(200).send(data);
-      console.log('server: ', data)
+      res.status(200).send(data[0]);
+      console.log('server: ', data[0])
     }
   });
 });
