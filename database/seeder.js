@@ -15,6 +15,17 @@ const hostSchema = mongoose.Schema({
 
 const Host = mongoose.model('Host', hostSchema);
 
+const desArr = [
+    'Entire House 4 beds', 'Entire Apartment 1 bed', 'Entire Apartment 3 beds', 'Entire Suite 4 beds',
+    'Entire House 2 beds', '3B/2.5B Ocean View', 'Entire Apartment Antibes', 'Entire Apartment Cannes',
+    'Entire Guest Suite', 'Entire House 4 beds', 'Entire Suite 6 beds', 'Entire House 3 beds', 'Entire House 5 beds',
+];
+const nameArr = [
+    'Loft luxe centre', 'VESTA - El Gouna Residence', 'Joli appartement typiquement bruxellois', 'Valle de Guadalupe',
+    'Casa El Sueño', 'Luxury Modern Bojo', 'Villa de La Rosa', 'Villa avec piscine exclusive à Cannes',
+    'Attico Su Firenze', 'Casa di Delizie', '海ノ離レ', '日貫一日',
+];
+
 for (let i = 1; i < 101; i += 1) {
     const records = new Host({
         roomid: i,
@@ -34,10 +45,10 @@ for (let i = 1; i < 101; i += 1) {
                 min: 4,
                 max: 200,
             }),
-            description: 'Entire House 4beds',
-            name: 'VESTA - El Gouna Residence',
+            description: desArr[j],
+            name: nameArr[j],
 
-            price: faker.commerce.price(100, 1000),
+            price: '$'+faker.commerce.price(100, 1000)+'/night',
             superhost: {
                 default: false,
             },

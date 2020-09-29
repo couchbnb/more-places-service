@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     padding-left: 50px
   `;
 
-const Top = styled.section`
+const Grid = styled.section`
     display: flex;
     justify-content: space-between;
     padding-bottom: 24px; 
@@ -76,14 +76,14 @@ class App extends React.Component {
     return (
       <div>
         <Wrapper>
-          <Top>
+          <Grid>
             <Title>More places to stay</Title>
             <Right>
-            <div> 1/4 </div>
-            <Button>pre</Button>
-            <Button>next </Button>
+              <div> 1/4 </div>
+              <Button>pre</Button>
+              <Button>next </Button>
             </Right>
-          </Top>
+          </Grid>
           <div>
             <List data={this.state.doc} />
           </div>

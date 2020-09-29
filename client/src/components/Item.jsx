@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Item = ({ item }) => {
   const {
-    rate, name, picture, description, price,
+    star, review, name, picture, description, price,
   } = item;
 
   /* className="list" style="margin-left: -6px; margin-right: -6px;" */
@@ -16,17 +16,12 @@ const Item = ({ item }) => {
     <div>
 
       <div>
-        {rate}
-      </div>
-      <div>
-        {name}
-      </div>
-      <div>
         <Pic src={picture} />
       </div>
-      <div>
-        {description}
-      </div>
+      <span>{star}</span>
+      <span>({review})</span>
+      <div>{name}</div>
+      <div>{description}</div>
       <div>{price}</div>
 
     </div>

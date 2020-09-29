@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Item from './Item.jsx';
 
 const List = ({ data }) => {
-  const Grid = styled.div`
+  const Slide = styled.div`
   display: flex;
   height: 100%;
   list-style: none;
@@ -15,9 +15,9 @@ const List = ({ data }) => {
   scroll-snap-type: x mandatory !important;
   `;
   return (
-    <Grid>
+    <Slide>
       {data.map((item, index) => <Item item={item} key={index} />)}
-    </Grid>
+    </Slide>
   );
 };
 
