@@ -5,8 +5,14 @@ import Item from './Item.jsx';
 const List = ({ data }) => {
   const Grid = styled.div`
   display: flex;
-  justify-content: center;
-
+  height: 100%;
+  list-style: none;
+  overflow: auto hidden;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  min-width: 100%;
+  scroll-snap-type: x mandatory !important;
   `;
   return (
     <Grid>

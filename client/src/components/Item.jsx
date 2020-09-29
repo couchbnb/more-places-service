@@ -8,8 +8,8 @@ const Item = ({ item }) => {
 
   /* className="list" style="margin-left: -6px; margin-right: -6px;" */
   const Pic = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 200px;
   margin: 15px;
   `;
   return (
