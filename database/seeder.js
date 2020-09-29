@@ -15,16 +15,16 @@ const hostSchema = mongoose.Schema({
 
 const Host = mongoose.model('Host', hostSchema);
 
-for (let i = 1; i < 3; i += 1) {
+for (let i = 1; i < 101; i += 1) {
     const records = new Host({
         roomid: i,
         host: [],
 
     });
 
-    for (let j = 0; j < 2; j += 1) {
+    for (let j = 1; j < 13; j += 1) {
         const singHost = {
-            picture: `https://couchbnbpic.s3-us-west-1.amazonaws.com/pics/couchbnb_pic/${i}.jpg`,
+            picture: `https://couchbnbpic.s3-us-west-1.amazonaws.com/pics/couchbnb_pic/${j}.jpg`,
             star: faker.random.number({
                 min: 1,
                 max: 5,
