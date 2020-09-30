@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Item from './Item.jsx';
-// import Slider from 'react-slick';
 
 const List = ({ data }) => {
   const Slide = styled.div`
@@ -16,14 +15,8 @@ const List = ({ data }) => {
   scroll-snap-type: x mandatory !important;
   `;
 
-  // const setting = {
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 4,
-  //   slidesToScroll: 4,
-  // };
+ 
   return (
-    // <Slider {...settings}>
 
     <Slide>
       {data.map((item, index) => <Item item={item} key={index} />)}
