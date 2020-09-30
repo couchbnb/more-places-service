@@ -80,8 +80,8 @@ class App extends React.Component {
             <Title>More places to stay</Title>
             <Right>
               <div> 1/4 </div>
-              <Button>pre</Button>
-              <Button>next </Button>
+    <Button>{'<'}</Button>
+              <Button>{'>'} </Button>
             </Right>
           </Grid>
           <div>
