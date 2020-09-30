@@ -9,8 +9,7 @@ let it;
 describe('<App />', () => {
   it('assert checked', () => {
     const wrapper = mount(<App />);
-    expect(wrapper.find('#picture')).toExist();
-    expect(wrapper.find('#rate')).toExist();
+    expect(wrapper.find('#title')).toExist();
     // expect(wrapper.find("#not")).not.toBeChecked();
   });
 });

@@ -77,7 +77,7 @@ class App extends React.Component {
       <div>
         <Wrapper>
           <Grid>
-            <Title>More places to stay</Title>
+            <Title id="title">More places to stay</Title>
             <Right>
               <div> 1/4 </div>
               {/* <Slider /> */}
