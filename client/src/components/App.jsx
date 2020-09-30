@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import List from './List.jsx';
+// import Slider from './Slider.jsx';
 
 const Wrapper = styled.div`
     padding-top: 400px;
@@ -80,8 +81,11 @@ class App extends React.Component {
             <Title>More places to stay</Title>
             <Right>
               <div> 1/4 </div>
-    <Button>{'<'}</Button>
-              <Button>{'>'} </Button>
+              {/* <Slider /> */}
+              <Button>{'<'}</Button>
+              <Button>
+                {'>'}
+              </Button>
             </Right>
           </Grid>
           <div>
