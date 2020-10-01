@@ -20,7 +20,6 @@ const Title = styled.div`
   font-size: 22px !important;
   line-height: 26px
   `;
-
 const Button = styled.span`
   display: inline-flex;
   appearance: none 
@@ -41,8 +40,6 @@ const Button = styled.span`
   box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px;
   transition: box-shadow 0.2s ease 0s, -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s;
 `;
-
-
 const Hide = styled.div`
 display: flex;
 overflow: auto hidden;
@@ -64,17 +61,14 @@ position: relative;
 let motion = 0;
 const List = ({ data }) => {
   function handleClickPrev() {
-    motion += 600;
-    document.getElementById('container').style.transform = `translateX(${motion + 400}px)`;
+    motion += 1250;
+    document.getElementById('container').style.transform = `translateX(${motion}px)`;
   }
   function handleClickNext() {
-    document.getElementById('container').style.transform = `translateX(${motion - 400}px)`;
-    motion -= 600;
+    document.getElementById('container').style.transform = `translateX(${motion - 1250}px)`;
+    motion -= 1250;
   }
-  // const handleClickPrev = () => ReferenceError.current.scrollIntoView({
-  //   bahavior: 'smooth',
-  //   block: 'start',
-  // })
+
   return (
     <div>
       <Grid>

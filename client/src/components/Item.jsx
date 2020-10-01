@@ -7,14 +7,28 @@ import Heart from './Heart.jsx';
 const element = <FontAwesomeIcon icon={faStar} />;
 
 const Frame = styled.div`
-  margin-bottom: 10px;
   position: relative;
+`;
+const Host = styled.div`
+color: #222222;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+font-weight: 650 !important;
+font-size: 12px !important;
+line-height: 20px !important;
 `;
 const Upleft = styled.div`
   margin-top: 25px;
   display: flex;
   left: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  color: rgb(34, 34, 34);
   position: absolute;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  overflow: hidden;
 `;
 const Upright = styled.div`
   margin-top: 25px;
@@ -22,8 +36,14 @@ const Upright = styled.div`
   right: 25px;
   position: absolute;
 `;
+const Bottom = styled.div`
+
+margin-left: 15px;
+margin-right: 15px;
+`;
+
 const Pic = styled.img`
-  width: 250px;
+  width: 280px;
   height: 200px;
   margin: 15px;
   border-top-left-radius: 12px;
@@ -42,33 +62,35 @@ const Item = ({ item }) => {
     <div>
       <Frame id="Frame">
         <Upleft id="upleft">
-          <div>
+          <Host>
             {
     superhost === true ? 'SUPERHOST' : ''
     }
-          </div>
+          </Host>
         </Upleft>
         <Upright id="upright">
           <Heart id="heart" />
         </Upright>
         <Pic src={picture} />
       </Frame>
-      <FontAwesomeIcon
-        icon={faStar}
-        color="#ff385c"
-        width="6px"
-        height="6px"
-      />
+      <Bottom>
+        <FontAwesomeIcon
+          icon={faStar}
+          color="#ff385c"
+          width="6px"
+          height="6px"
+        />
 &nbsp;
-      <span>{star}</span>
-      <span>
-        (
-        {review}
-        )
-      </span>
-      <div>{name}</div>
-      <div>{description}</div>
-      <div>{price}</div>
+        <span>{star}</span>
+        <span>
+          (
+          {review}
+          )
+        </span>
+        <div>{name}</div>
+        <div>{description}</div>
+        <div>{price}</div>
+      </Bottom>
     </div>
   );
 };
