@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Heart from './Heart.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
+const element = <FontAwesomeIcon icon={faStar} />
 
 const Item = ({ item }) => {
   const {
@@ -46,6 +50,8 @@ const Item = ({ item }) => {
         </Upright>
         <Pic src={picture} />
       </Frame>
+      <FontAwesomeIcon icon={faStar} color="#ff385c"
+      width="6px" height="6px" />&nbsp;
       <span>{star}</span>
       <span>
         (
