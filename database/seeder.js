@@ -35,6 +35,7 @@ for (let i = 1; i < 101; i += 1) {
 
     for (let j = 1; j < 13; j += 1) {
         const singHost = {
+            key: j,
             picture: `https://couchbnbpic.s3-us-west-1.amazonaws.com/pics/couchbnb_pic/${j}.jpg`,
             star: faker.random.number({
                 min: 1,
