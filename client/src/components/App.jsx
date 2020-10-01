@@ -5,7 +5,7 @@ import List from './List.jsx';
 
 const Wrapper = styled.div`
     padding-top: 350px;
-    padding-right: 100px;
+    padding-right: 120px;
     padding-bottom: 100px;
     padding-left: 100px
   `;

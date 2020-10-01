@@ -6,6 +6,8 @@ const Grid = styled.section`
     display: flex;
     justify-content: space-between;
     padding-bottom: 24px; 
+    padding-left: 18px;
+    padding-right: 20px;
 `;
 const Right = styled.div`
   align-items: center !important;

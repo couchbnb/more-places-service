@@ -38,12 +38,12 @@ const Upright = styled.div`
 `;
 const Bottom = styled.div`
 
-margin-left: 15px;
+margin-left: 18px;
 margin-right: 15px;
 `;
 
 const Pic = styled.img`
-  width: 280px;
+  width: 270px;
   height: 200px;
   margin: 15px;
   border-top-left-radius: 12px;
@@ -81,7 +81,7 @@ const Item = ({ item }) => {
           height="6px"
         />
 &nbsp;
-        <span>{star}</span>
+        <span>{star}</span>&nbsp;
         <span>
           (
           {review}
