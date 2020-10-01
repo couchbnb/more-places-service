@@ -10,40 +10,7 @@ const Wrapper = styled.div`
     padding-left: 50px
   `;
 
-const Grid = styled.section`
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 24px; 
-`;
-const Right = styled.div`
-  align-items: center !important;
-  display: flex !important;
-  white-space: nowrap  
-`;
-const Title = styled.div`
-  text-align: left;
-  color: black;
-  padding-bottom: 0px;
-  font-weight: 600 !important;
-  font-size: 22px !important;
-  line-height: 26px
-  `;
 
-const Button = styled.span`
-  display: inline-flex;
-  appearance: none 
-  margin: 0px;
-  padding: 0px;
-  border-radius: 50%;
-  border: 1px solid;
-  outline: none;
-  touch-action: manipulation;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-`;
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -75,21 +42,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Wrapper>
-          <Grid>
-            <Title id="title">More places to stay</Title>
-            <Right>
-              <div> 1/4 </div>
-              {/* <Slider /> */}
-              <Button>{'<'}</Button>
-              <Button>
-                {'>'}
-              </Button>
-            </Right>
-          </Grid>
-          <div>
-            <List data={this.state.doc} />
-          </div>
+        <Wrapper id="App">
+            <List id="List" data={this.state.doc} />
         </Wrapper>
       </div>
     );
@@ -98,14 +52,3 @@ class App extends React.Component {
 
 export default App;
 
-/* style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'flex-end',
-          flexWrap: 'nowrap',
-          border: '5px',
-          height: '300px',
-          width: '600px',
-          justifyContent: 'space-between',
-          backgroundColor: 'blue',
-        }} */

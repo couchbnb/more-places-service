@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1601497908615" clover="3.2.0">
-  <project timestamp="1601497908615" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="sum.js" path="/Users/babyfox/more-places-service/spec/sum.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
+<coverage generated="1601525397886" clover="3.2.0">
+  <project timestamp="1601525397886" name="All files">
+    <metrics statements="36" coveredstatements="23" conditionals="2" coveredconditionals="1" methods="15" coveredmethods="8" elements="53" coveredelements="32" complexity="0" loc="36" ncloc="36" packages="1" files="4" classes="4"/>
+    <file name="App.jsx" path="/Users/babyfox/more-places-service/client/src/components/App.jsx">
+      <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+    </file>
+    <file name="Heart.jsx" path="/Users/babyfox/more-places-service/client/src/components/Heart.jsx">
+      <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
+      <line num="4" count="4" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+    </file>
+    <file name="Item.jsx" path="/Users/babyfox/more-places-service/client/src/components/Item.jsx">
+      <metrics statements="7" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="5" count="3" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+    </file>
+    <file name="List.jsx" path="/Users/babyfox/more-places-service/client/src/components/List.jsx">
+      <metrics statements="13" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="40" count="2" type="stmt"/>
+      <line num="51" count="2" type="stmt"/>
+      <line num="52" count="2" type="stmt"/>
+      <line num="54" count="0" type="stmt"/>
+      <line num="55" count="0" type="stmt"/>
+      <line num="58" count="0" type="stmt"/>
+      <line num="59" count="0" type="stmt"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="74" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>

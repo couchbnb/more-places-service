@@ -37,12 +37,12 @@ const Item = ({ item }) => {
   `;
   return (
     <div>
-      <Frame>
+      <Frame id="Frame">
         <Upleft>
           <div>SuperHost</div>
         </Upleft>
         <Upright>
-          <Heart />
+          <Heart id="heart" />
         </Upright>
         <Pic src={picture} />
       </Frame>
