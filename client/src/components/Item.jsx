@@ -33,36 +33,40 @@ const Pic = styled.img`
   pointer-events: none;
   overflow: hidden; 
 `;
-const Item = ({
-  star, review, name, picture, description, price,
-}) => (
-  <div>
-    <Frame id="Frame">
-      <Upleft id="upleft">
-        <div>SuperHost</div>
-      </Upleft>
-      <Upright id="upright">
-        <Heart id="heart" />
-      </Upright>
-      <Pic src={picture} />
-    </Frame>
-    <FontAwesomeIcon
-      icon={faStar}
-      color="#ff385c"
-      width="6px"
-      height="6px"
-    />
+const Item = ({ item }) => {
+  const {
+    star, review, name, picture, description, price,
+  } = item;
+
+  return (
+    <div>
+      <Frame id="Frame">
+        <Upleft id="upleft">
+          <div>SuperHost</div>
+        </Upleft>
+        <Upright id="upright">
+          <Heart id="heart" />
+        </Upright>
+        <Pic src={picture} />
+      </Frame>
+      <FontAwesomeIcon
+        icon={faStar}
+        color="#ff385c"
+        width="6px"
+        height="6px"
+      />
 &nbsp;
-    <span>{star}</span>
-    <span>
-      (
-      {review}
-      )
-    </span>
-    <div>{name}</div>
-    <div>{description}</div>
-    <div>{price}</div>
-  </div>
-);
+      <span>{star}</span>
+      <span>
+        (
+        {review}
+        )
+      </span>
+      <div>{name}</div>
+      <div>{description}</div>
+      <div>{price}</div>
+    </div>
+  );
+};
 
 export default Item;
