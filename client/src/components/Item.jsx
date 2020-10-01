@@ -1,44 +1,62 @@
 import React from 'react';
 import styled from 'styled-components';
+import Heart from './Heart.jsx';
 
 const Item = ({ item }) => {
   const {
-    rate, name, picture, description, price,
+    star, review, name, picture, description, price,
   } = item;
 
-  /* className="list" style="margin-left: -6px; margin-right: -6px;" */
+  const Frame = styled.div`
+    margin-bottom: 10px;
+    position: relative;
+`;
+
+  const Upleft = styled.div`
+    margin-top: 25px;
+    display: flex;
+    left: 30px;
+    position: absolute;
+  `;
+  const Upright = styled.div`
+    margin-top: 25px;
+    display: flex;
+    right: 25px;
+    position: absolute;
+  `;
   const Pic = styled.img`
-  width: 100px;
-  height: 100px;
-  margin: 15px;
+    width: 280px;
+    height: 220px;
+    margin: 15px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    pointer-events: none;
+    overflow: hidden; 
   `;
   return (
     <div>
-
-      <div>
-        {rate}
-      </div>
-      <div>
-        {name}
-      </div>
-      <div>
+      <Frame>
+        <Upleft>
+          <div>SuperHost</div>
+        </Upleft>
+        <Upright>
+          <Heart />
+        </Upright>
         <Pic src={picture} />
-      </div>
-      <div>
-        {description}
-      </div>
+      </Frame>
+      <span>{star}</span>
+      <span>
+        (
+        {review}
+        )
+      </span>
+      <div>{name}</div>
+      <div>{description}</div>
       <div>{price}</div>
-
     </div>
   );
 };
 
 export default Item;
-
-//   const Wrapper = styled.section`
-
-//     padding: 4em;
-//     border-width: 0px 6px;
-//     max-width: 66.6667%;
-//     flex: 0 0 66.6667%;
-//   `;
