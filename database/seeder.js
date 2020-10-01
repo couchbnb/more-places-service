@@ -49,10 +49,8 @@ for (let i = 1; i < 101; i += 1) {
             description: desArr[j],
             name: nameArr[j],
 
-            price: '$'+faker.commerce.price(100, 1000)+'/night',
-            superhost: {
-                default: false,
-            },
+            price: `$${faker.random.number({ min: 150, max: 1000 })}/night`,
+            superhost: Math.random() > 0.7,
             heart: {
                 default: false,
             },
@@ -72,5 +70,5 @@ for (let i = 1; i < 101; i += 1) {
 }
 
 module.exports = {
-    Host
+    Host,
 };

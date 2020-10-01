@@ -23,8 +23,8 @@ const Upright = styled.div`
   position: absolute;
 `;
 const Pic = styled.img`
-  width: 280px;
-  height: 220px;
+  width: 250px;
+  height: 200px;
   margin: 15px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -35,14 +35,18 @@ const Pic = styled.img`
 `;
 const Item = ({ item }) => {
   const {
-    star, review, name, picture, description, price,
+    star, review, name, picture, description, price, superhost,
   } = item;
 
   return (
     <div>
       <Frame id="Frame">
         <Upleft id="upleft">
-          <div>SuperHost</div>
+          <div>
+            {
+    superhost === true ? 'SUPERHOST' : ''
+    }
+          </div>
         </Upleft>
         <Upright id="upright">
           <Heart id="heart" />
