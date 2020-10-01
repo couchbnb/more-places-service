@@ -53,6 +53,7 @@ margin-top: 0px;
 min-width: 100%;
 scroll-snap-type: x mandatory !important;
 `;
+
 let motion = 0;
 const List = ({ data }) => {
   function handleClickPrev() {
@@ -63,7 +64,10 @@ const List = ({ data }) => {
     document.getElementById('container').style.transform = `translateX(${motion - 1000}px)`;
     motion -= 500;
   }
-
+  // const handleClickPrev = () => ReferenceError.current.scrollIntoView({
+  //   bahavior: 'smooth',
+  //   block: 'start',
+  // })
   return (
     <div>
       <Grid>
