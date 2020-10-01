@@ -27,7 +27,6 @@ const Button = styled.span`
   margin: 0px;
   padding: 0px;
   border-radius: 50%;
-  border: 1px solid;
   outline: none;
   touch-action: manipulation;
   align-items: center;
@@ -35,6 +34,12 @@ const Button = styled.span`
   cursor: pointer;
   width: 32px;
   height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: rgb(34, 34, 34);
+  background-color: rgba(255, 255, 255, 0.9);
+  background-clip: padding-box;
+  box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s;
 `;
 
 const Slide = styled.div`
@@ -70,9 +75,7 @@ const List = ({ data }) => {
         </Right>
       </Grid>
       <Slide id="container">
-
         {data.map((item, index) => <Item id="item" item={item} key={index} />)}
-
       </Slide>
     </div>
   );

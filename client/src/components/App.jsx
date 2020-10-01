@@ -10,7 +10,6 @@ const Wrapper = styled.div`
     padding-left: 50px
   `;
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,7 +30,6 @@ class App extends React.Component {
         params: { roomid: id },
       })
       .then((response) => {
-        // console.log(response.data.host)
         this.setState({
           doc: response.data.host,
         });
@@ -43,7 +41,7 @@ class App extends React.Component {
     return (
       <div>
         <Wrapper id="App">
-            <List id="List" data={this.state.doc} />
+          <List id="List" data={this.state.doc} />
         </Wrapper>
       </div>
     );
@@ -51,4 +49,3 @@ class App extends React.Component {
 }
 
 export default App;
-

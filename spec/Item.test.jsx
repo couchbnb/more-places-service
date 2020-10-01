@@ -12,4 +12,11 @@ describe('Item', () => {
   it('Heart renders', () => {
     expect(wrapper.exists('#heart')).toBe(true);
   });
+  it('upleft renders', () => {
+    expect(wrapper.exists('#upleft')).toBe(true);
+  });
+  it('upright renders', () => {
+    expect(wrapper.exists('#upright')).toBe(true);
+  });
+
 });
