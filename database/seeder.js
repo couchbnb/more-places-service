@@ -35,6 +35,7 @@ for (let i = 1; i < 101; i += 1) {
 
     for (let j = 1; j < 13; j += 1) {
         const singHost = {
+            key: j,
             picture: `https://couchbnbpic.s3-us-west-1.amazonaws.com/pics/couchbnb_pic/${j}.jpg`,
             star: faker.random.number({
                 min: 1,
@@ -48,10 +49,8 @@ for (let i = 1; i < 101; i += 1) {
             description: desArr[j],
             name: nameArr[j],
 
-            price: '$'+faker.commerce.price(100, 1000)+'/night',
-            superhost: {
-                default: false,
-            },
+            price: `$${faker.random.number({ min: 150, max: 1000 })}/night`,
+            superhost: Math.random() > 0.7,
             heart: {
                 default: false,
             },
@@ -71,5 +70,5 @@ for (let i = 1; i < 101; i += 1) {
 }
 
 module.exports = {
-    Host
+    Host,
 };

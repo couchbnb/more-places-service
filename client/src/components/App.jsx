@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import List from './List.jsx';
 
 const Wrapper = styled.div`
-    padding-top: 400px;
-    padding-right: 50px;
+    padding-top: 350px;
+    padding-right: 120px;
     padding-bottom: 100px;
-    padding-left: 50px
+    padding-left: 100px
   `;
 
 class App extends React.Component {
@@ -16,6 +16,7 @@ class App extends React.Component {
     this.state = {
       doc: [],
     };
+
     this.getHost = this.getHost.bind(this);
   }
 

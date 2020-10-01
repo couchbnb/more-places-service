@@ -6,6 +6,8 @@ const Grid = styled.section`
     display: flex;
     justify-content: space-between;
     padding-bottom: 24px; 
+    padding-left: 18px;
+    padding-right: 20px;
 `;
 const Right = styled.div`
   align-items: center !important;
@@ -20,7 +22,6 @@ const Title = styled.div`
   font-size: 22px !important;
   line-height: 26px
   `;
-
 const Button = styled.span`
   display: inline-flex;
   appearance: none 
@@ -41,33 +42,35 @@ const Button = styled.span`
   box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px;
   transition: box-shadow 0.2s ease 0s, -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s;
 `;
-
+const Hide = styled.div`
+display: flex;
+overflow: auto hidden;
+position: relative;
+`;
 const Slide = styled.div`
 display: flex;
 height: 100%;
 list-style: none;
-overflow: auto hidden;
+transition: transform 0.5s;
 padding-left: 0px;
 margin-bottom: 0px;
 margin-top: 0px;
 min-width: 100%;
-scroll-snap-type: x mandatory !important;
+scroll-snap-type: x mandatory;
+position: relative;
 `;
 
 let motion = 0;
 const List = ({ data }) => {
   function handleClickPrev() {
-    document.getElementById('container').style.transform = `translateX(${motion + 1000}px)`;
-    motion += 500;
+    motion += 1250;
+    document.getElementById('container').style.transform = `translateX(${motion}px)`;
   }
   function handleClickNext() {
-    document.getElementById('container').style.transform = `translateX(${motion - 1000}px)`;
-    motion -= 500;
+    document.getElementById('container').style.transform = `translateX(${motion - 1250}px)`;
+    motion -= 1250;
   }
-  // const handleClickPrev = () => ReferenceError.current.scrollIntoView({
-  //   bahavior: 'smooth',
-  //   block: 'start',
-  // })
+
   return (
     <div>
       <Grid>
@@ -78,13 +81,13 @@ const List = ({ data }) => {
           <Button id="nextButton"onClick={handleClickNext}>{'>'}</Button>
         </Right>
       </Grid>
+      <Hide>
       <Slide id="container">
         {data.map((item, index) => <Item id="item" item={item} key={index} />)}
       </Slide>
+      </Hide>
     </div>
   );
 };
 
 export default List;
-
-// flex-wrap: nowrap;
