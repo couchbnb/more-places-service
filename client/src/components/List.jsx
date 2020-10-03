@@ -61,37 +61,77 @@ position: relative;
 `;
 
 let motion = 1;
-const List = ({ data }) => {
-  function handleClickPrev() {
+let count;
+class List extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      num : null
+    }
+
+    this.handleClickPrev = this.handleClickPrev.bind(this);
+    this.handleClickNext = this.handleClickNext.bind(this);
+    this.pageNum = this.pageNum.bind(this);
+  }
+
+  handleClickPrev() {
     if (motion < 0) {
       motion += 1200;
       document.getElementById('container').style.transform = `translateX(${motion}px)`;
-    }
-  }
-  function handleClickNext() {
-    if (motion > -2399) {
-      document.getElementById('container').style.transform = `translateX(${motion - 1200}px)`;
-      motion -= 1200;
+      this.setState({
+        num: motion,
+      })
     }
   }
 
-  return (
-    <div>
-      <Grid>
-        <Title id="title">More places to stay</Title>
-        <Right>
-          <div> 1/4 </div>
-          <Button onClick={handleClickPrev}>{'<'}</Button>
-          <Button id="nextButton" onClick={handleClickNext}>{'>'}</Button>
-        </Right>
-      </Grid>
-      <Hide>
-        <Slide id="container">
-          {data.map((item, index) => <Item id="item" item={item} key={index} />)}
-        </Slide>
-      </Hide>
-    </div>
-  );
-};
+  handleClickNext() {
+    if (motion > -2399) {
+      motion -= 1200;
+      document.getElementById('container').style.transform = `translateX(${motion}px)`;
+      this.setState({
+        num: motion,
+      })
+    }
+  }
+
+  // componentDidmount() {
+  //   this.pageNum();
+  // }
+
+  pageNum() {
+    if ( this.state.num  <= 0 &&  this.state.num  > -1200) {
+      count = '2/3';
+      return count;
+    }
+    if ( this.state.num  <= -1200) {
+       count = '3/3';
+       return count;
+    }
+     count = '1/3';
+     return count;
+  }
+
+  render() {
+    return (
+      <div>
+        <Grid>
+          <Title id="title">More places to stay</Title>
+          <Right>
+            <div>
+              {this.pageNum()}
+            </div>
+            <Button onClick={this.handleClickPrev}>{'<'}</Button>
+            <Button id="nextButton" onClick={this.handleClickNext}>{'>'}</Button>
+          </Right>
+        </Grid>
+        <Hide>
+          <Slide id="container">
+            {this.props.data.map((item, index) => <Item id="item" item={item} key={index} />)}
+          </Slide>
+        </Hide>
+      </div>
+    );
+  }
+}
 
 export default List;
