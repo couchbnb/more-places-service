@@ -60,15 +60,19 @@ scroll-snap-type: x mandatory;
 position: relative;
 `;
 
-let motion = 0;
+let motion = 1;
 const List = ({ data }) => {
   function handleClickPrev() {
-    motion += 1250;
-    document.getElementById('container').style.transform = `translateX(${motion}px)`;
+    if (motion < 0) {
+      motion += 1200;
+      document.getElementById('container').style.transform = `translateX(${motion}px)`;
+    }
   }
   function handleClickNext() {
-    document.getElementById('container').style.transform = `translateX(${motion - 1250}px)`;
-    motion -= 1250;
+    if (motion > -2399) {
+      document.getElementById('container').style.transform = `translateX(${motion - 1200}px)`;
+      motion -= 1200;
+    }
   }
 
   return (

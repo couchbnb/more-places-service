@@ -61,10 +61,9 @@ const Upright = styled.div`
   right: 25px;
   position: absolute;
 `;
-const Bottom = styled.div`
-
-margin-left: 18px;
-margin-right: 15px;
+const Bottom = styled.div` 
+  margin-left: 18px;
+  margin-right: 15px;
 `;
 const Pic = styled.img`
   width: 270px;
