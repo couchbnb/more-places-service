@@ -9,6 +9,31 @@ const element = <FontAwesomeIcon icon={faStar} />;
 const Frame = styled.div`
   position: relative;
 `;
+const Bold = styled.span`
+color: #222222 !important;
+font-weight: 600 !important;
+font-size: 16px !important;
+line-height: 30px;
+`;
+const Price = styled.div`
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4222222;
+  font-weight: 300 !important;
+`;
+const Name = styled.div`
+padding-top: 3px;
+color: rgb(34, 34, 34) !important;
+line-height: 20px;
+max-height: 20px;
+overflow: hidden;
+text-overflow: ellipsis;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+font-weight: 300;
+font-size: 16px !important;
+line-height: 20px !important;
+`;
 const Host = styled.div`
 color: #222222;
 font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
@@ -41,7 +66,6 @@ const Bottom = styled.div`
 margin-left: 18px;
 margin-right: 15px;
 `;
-
 const Pic = styled.img`
   width: 270px;
   height: 200px;
@@ -81,15 +105,19 @@ const Item = ({ item }) => {
           height="6px"
         />
 &nbsp;
-        <span>{star}</span>&nbsp;
+        <span>{star}</span>
+&nbsp;
         <span>
           (
           {review}
           )
         </span>
-        <div>{name}</div>
-        <div>{description}</div>
-        <div>{price}</div>
+        <Name>{description}</Name>
+        <Name>{name}</Name>
+        <Price>
+          <Bold>{price}</Bold>
+          {' / night'}
+        </Price>
       </Bottom>
     </div>
   );

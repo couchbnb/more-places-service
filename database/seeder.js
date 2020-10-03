@@ -49,7 +49,7 @@ for (let i = 1; i < 101; i += 1) {
             description: desArr[j],
             name: nameArr[j],
 
-            price: `$${faker.random.number({ min: 150, max: 1000 })}/night`,
+            price: `$${faker.random.number({ min: 150, max: 1000 })}`,
             superhost: Math.random() > 0.7,
             heart: {
                 default: false,

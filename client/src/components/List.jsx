@@ -78,13 +78,13 @@ const List = ({ data }) => {
         <Right>
           <div> 1/4 </div>
           <Button onClick={handleClickPrev}>{'<'}</Button>
-          <Button id="nextButton"onClick={handleClickNext}>{'>'}</Button>
+          <Button id="nextButton" onClick={handleClickNext}>{'>'}</Button>
         </Right>
       </Grid>
       <Hide>
-      <Slide id="container">
-        {data.map((item, index) => <Item id="item" item={item} key={index} />)}
-      </Slide>
+        <Slide id="container">
+          {data.map((item, index) => <Item id="item" item={item} key={index} />)}
+        </Slide>
       </Hide>
     </div>
   );
