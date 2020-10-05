@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import Modal from './Modal.jsx';
 
 const Button = styled.div`
 cursor: pointer;
@@ -22,7 +23,6 @@ width: 32px;
 height: 32px;
 `;
 
-
 class Heart extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +44,8 @@ class Heart extends React.Component {
           ? (
             <Button id="heartButton" type="button" onClick={this.handleHeart}>
               <div>
-                <svg id="heartsvg"
+                <svg
+                  id="heartsvg"
                   type="button"
                   viewBox="0 0 32 32"
                   xmlns="http://www.w3.org/2000/svg"
@@ -71,6 +72,7 @@ class Heart extends React.Component {
           )
           : (
             <Button type="button" onClick={this.handleHeart}>
+              <Modal open={this.state.isToggleOn} onClose={() => this.setState({isToggleOn: !isToggleOn})} />
               <div>
                 <svg
                   type="button"

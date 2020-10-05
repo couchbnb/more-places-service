@@ -66,8 +66,8 @@ class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      num : null
-    }
+      num: null,
+    };
 
     this.handleClickPrev = this.handleClickPrev.bind(this);
     this.handleClickNext = this.handleClickNext.bind(this);
@@ -80,7 +80,7 @@ class List extends React.Component {
       document.getElementById('container').style.transform = `translateX(${motion}px)`;
       this.setState({
         num: motion,
-      })
+      });
     }
   }
 
@@ -90,25 +90,25 @@ class List extends React.Component {
       document.getElementById('container').style.transform = `translateX(${motion}px)`;
       this.setState({
         num: motion,
-      })
+      });
     }
   }
 
-  // componentDidmount() {
-  //   this.pageNum();
-  // }
+  componentDidmount() {
+    this.pageNum();
+  }
 
   pageNum() {
-    if ( this.state.num  <= 0 &&  this.state.num  > -1200) {
+    if (this.state.num < 0 && this.state.num > -1200) {
       count = '2/3';
       return count;
     }
-    if ( this.state.num  <= -1200) {
-       count = '3/3';
-       return count;
+    if (this.state.num <= -1200) {
+      count = '3/3';
+      return count;
     }
-     count = '1/3';
-     return count;
+    count = '1/3';
+    return count;
   }
 
   render() {
