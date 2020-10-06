@@ -34,6 +34,20 @@ font-weight: 300;
 font-size: 16px !important;
 line-height: 20px !important;
 `;
+const Rate = styled.span`
+color: rgb(34, 34, 34) !important;
+font-size: 15px !important;
+    line-height: 18px !important;
+`;
+const Review = styled.span`
+color: rgb(113, 113, 113) !important;
+  overflow: hidden !important;
+    padding: 0px !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+`;
 const Host = styled.div`
 color: #222222;
 font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
@@ -54,6 +68,8 @@ const Upleft = styled.div`
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   overflow: hidden;
+  font-size: 14px !important;
+    line-height: 18px !important;
 `;
 const Upright = styled.div`
   margin-top: 25px;
@@ -104,13 +120,13 @@ const Item = ({ item }) => {
           height="6px"
         />
 &nbsp;
-        <span>{star}</span>
+        <Rate>{star}</Rate>
 &nbsp;
-        <span>
+        <Review>
           (
           {review}
           )
-        </span>
+        </Review>
         <Name>{description}</Name>
         <Name>{name}</Name>
         <Price>

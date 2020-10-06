@@ -65,12 +65,12 @@ const End = styled.div`
   flex: 0 0 auto;
   border-top: 1px solid rgb(235, 235, 235);
   padding-right: 24px;
-  padding-top: 500px;
+  padding-top: 480px;
   padding-left: 24px;
   align-items: center;
   justify-content: space-between;
   line-height: 20px;
-  position: relative;
+  position: absolute;
   `;
 const Create = styled.button`
     border: none;

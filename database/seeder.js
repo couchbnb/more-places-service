@@ -40,7 +40,7 @@ for (let i = 1; i < 101; i += 1) {
             star: faker.random.number({
                 min: 1,
                 max: 5,
-                precision: 0.1,
+                precision: 0.01,
             }),
             review: faker.random.number({
                 min: 4,
