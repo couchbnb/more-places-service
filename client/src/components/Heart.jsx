@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from './Modal.jsx';
 
@@ -72,7 +72,10 @@ class Heart extends React.Component {
           )
           : (
             <Button type="button" onClick={this.handleHeart}>
-              <Modal open={this.state.isToggleOn} onClose={() => this.setState({isToggleOn: !isToggleOn})} />
+              <Modal
+                open={this.state.isToggleOn}
+                onClose={() => this.setState({ isToggleOn: !isToggleOn })}
+              />
               <div>
                 <svg
                   type="button"

@@ -5,22 +5,33 @@ import Item from './Item.jsx';
 const Grid = styled.section`
     display: flex;
     justify-content: space-between;
-    padding-bottom: 24px; 
+    padding-bottom: 18px; 
     padding-left: 18px;
     padding-right: 20px;
 `;
 const Right = styled.div`
   align-items: center !important;
   display: flex !important;
-  white-space: nowrap  
+  white-space: nowrap;
+  justify-content: space-between;  
+`;
+const Arrleft = styled.div`
+margin-right: 6px;  
+`;
+const Arrright = styled.div`
+margin-left: 6px;
 `;
 const Title = styled.div`
   text-align: left;
-  color: black;
+  padding-top: 4px;
   padding-bottom: 0px;
-  font-weight: 600 !important;
-  font-size: 22px !important;
+  font-weight: 460 !important;
+  font-size: 24px !important;
   line-height: 26px
+  color: rgb(34, 34, 34) !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+ 
+   
   `;
 const Button = styled.span`
   display: inline-flex;
@@ -58,6 +69,14 @@ margin-top: 0px;
 min-width: 100%;
 scroll-snap-type: x mandatory;
 position: relative;
+`;
+const Number = styled.div`
+color: rgb(34, 34, 34) !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    margin-right: 16px !important;
 `;
 
 let motion = 1;
@@ -100,14 +119,14 @@ class List extends React.Component {
 
   pageNum() {
     if (this.state.num < 0 && this.state.num > -1200) {
-      count = '2/3';
+      count = '2 / 3';
       return count;
     }
     if (this.state.num <= -1200) {
-      count = '3/3';
+      count = '3 / 3';
       return count;
     }
-    count = '1/3';
+    count = '1 / 3';
     return count;
   }
 
@@ -117,11 +136,52 @@ class List extends React.Component {
         <Grid>
           <Title id="title">More places to stay</Title>
           <Right>
-            <div>
+            <Number>
               {this.pageNum()}
-            </div>
-            <Button onClick={this.handleClickPrev}>{'<'}</Button>
-            <Button id="nextButton" onClick={this.handleClickNext}>{'>'}</Button>
+            </Number>
+            <Arrleft>
+              <Button onClick={this.handleClickPrev}>
+                <span>
+                  <svg
+                    viewBox="0 0 18 18"
+                    role="presentation"
+                    aria-hidden="true"
+                    focusable="false"
+                    style={{
+                      height: '10px',
+                      width: '10px',
+                      display: 'block',
+                      fill: 'currentcolor',
+                    }}
+                  >
+                    <path
+                      d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </Button>
+            </Arrleft>
+            <Arrright>
+              <Button id="nextButton" onClick={this.handleClickNext}>
+                <span>
+                  <svg
+                    viewBox="0 0 18 18"
+                    role="presentation"
+                    aria-hidden="true"
+                    focusable="false"
+                    style={{
+                      height: '10px',
+                      width: '10px',
+                      display: 'block',
+                      fill: 'currentcolor',
+                    }}
+                  >
+                    <path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fillRule="evenodd" />
+                  </svg>
+                </span>
+              </Button>
+            </Arrright>
           </Right>
         </Grid>
         <Hide>
