@@ -5,9 +5,9 @@
   "main": "babel.config.js",
   "scripts": {
     "test": "jest --coverage",
-    "react-dev": "webpack -d --watch",
+    "start": "webpack -d --watch",
     "seed": "node database/seeder.js",
-    "server-dev": "nodemon server/index.js"
+    "build": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
