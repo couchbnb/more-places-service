@@ -16,9 +16,9 @@ const hostSchema = mongoose.Schema({
 const Host = mongoose.model('Host', hostSchema);
 
 const desArr = [
-    'Entire House 4 beds', 'Entire Apartment 1 bed', 'Entire Apartment 3 beds', 'Entire Suite 4 beds',
-    'Entire House 2 beds', '3B/2.5B Ocean View', 'Entire Apartment Antibes', 'Entire Apartment Cannes',
-    'Entire Guest Suite', 'Entire House 4 beds', 'Entire Suite 6 beds', 'Entire House 3 beds', 'Entire House 5 beds',
+    'Entire House · 4 beds', 'Entire Apartment · 1 bed', 'Entire Apartment · 3 beds', 'Entire Suite · 4 beds',
+    'Entire House · 2 beds', '3B/2.5B Ocean View', 'Entire Apartment Antibes', 'Entire Apartment Cannes',
+    'Entire Guest Suite', 'Entire House · 4 beds', 'Entire Suite · 6 beds', 'Entire House · 3 beds', 'Entire House · 5 beds',
 ];
 const nameArr = [
     'Loft luxe centre', 'VESTA - El Gouna Residence', 'Joli appartement typiquement bruxellois', 'Valle de Guadalupe',
@@ -63,9 +63,6 @@ for (let i = 1; i < 101; i += 1) {
     //     if (err) {
     //         console.log(err);
     //     }
-    //     // else {
-    //     //     console.log('saved')
-    //     // }
     // });
 }
 

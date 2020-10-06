@@ -99,6 +99,43 @@ const Create = styled.button`
     text-decoration: underline !important;
     width: 100% !important;
   `;
+const Pic = styled.img`
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  pointer-events: none;
+  overflow: hidden; 
+`;
+const Frame = styled.div`
+padding: 20px 16px !important;
+    overflow-y: auto !important;
+`;
+const Box = styled.button`
+cursor: pointer !important;
+    position: relative !important;
+    touch-action: manipulation !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;;
+    line-height: 40px;
+    font-weight: 400;
+    border-radius: 0px;
+    outline: none;
+    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+    background: transparent;
+    border: none;
+    color: inherit;
+    display: block;
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+`;
+const Inside = styled.div`
+display: flex !important;
+align-items: center !important;
+padding-top: 5px !important;
+    padding-right: 410px !important;
+    padding-bottom: 5px !important;
+    padding-left: 5px !important;border-radius: 8px !important;
+`;
 
 export default function Modal({ onClose }) {
   return (
@@ -106,7 +143,6 @@ export default function Modal({ onClose }) {
       <Out>
         <Save>
           <ExitPosition>
-
             <Exit type="button" onClick={onClose}>
               <span>
                 <svg
@@ -130,15 +166,30 @@ export default function Modal({ onClose }) {
                 </svg>
               </span>
             </Exit>
-
           </ExitPosition>
           <Titlebox>
             Save to a list
           </Titlebox>
-
-      <End>
-          <Create type="button">Create a list</Create>
-      </End>
+          <Frame>
+            <Box>
+              <Inside>
+                <Pic src="https://couchbnbpic.s3-us-west-1.amazonaws.com/rooooom.jpg" />
+              </Inside>
+            </Box>
+            <Box>
+              <Inside>
+                <Pic src="https://couchbnbpic.s3-us-west-1.amazonaws.com/Italy.jpg" />
+              </Inside>
+            </Box>
+            <Box>
+              <Inside>
+                <Pic src="https://couchbnbpic.s3-us-west-1.amazonaws.com/swan.jpg" />
+              </Inside>
+            </Box>
+          </Frame>
+          <End>
+            <Create type="button">Create a list</Create>
+          </End>
         </Save>
       </Out>
 

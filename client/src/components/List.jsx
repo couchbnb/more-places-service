@@ -25,7 +25,7 @@ const Title = styled.div`
   text-align: left;
   padding-top: 4px;
   padding-bottom: 0px;
-  font-weight: 500 !important;
+  font-weight: 460 !important;
   font-size: 24px !important;
   line-height: 26px
   color: rgb(34, 34, 34) !important;
