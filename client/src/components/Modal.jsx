@@ -130,11 +130,12 @@ cursor: pointer !important;
 `;
 const Inside = styled.div`
 display: flex !important;
-align-items: center !important;
+align-items: center;
 padding-top: 5px !important;
     padding-right: 410px !important;
     padding-bottom: 5px !important;
-    padding-left: 5px !important;border-radius: 8px !important;
+    padding-left: 5px !important;
+    border-radius: 8px !important;
 `;
 
 export default function Modal({ onClose }) {
