@@ -9,7 +9,7 @@ const Frame = styled.div`
 const Bold = styled.span`
 color: #222222 !important;
 font-weight: 600 !important;
-font-size: 15px !important;
+font-size: 15px;
 line-height: 30px;
 `;
 const Price = styled.div`

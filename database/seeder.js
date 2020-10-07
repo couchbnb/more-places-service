@@ -1,19 +1,7 @@
 /* eslint-disable indent */
-const mongoose = require('mongoose');
+const db = require('./index.js');
 const faker = require('faker');
 
-mongoose.connect('mongodb://localhost/couchbnb');
-
-const hostSchema = mongoose.Schema({
-    roomid: {
-        type: Number,
-    },
-    host: {
-        type: Array,
-    },
-});
-
-const Host = mongoose.model('Host', hostSchema);
 
 const desArr = [
     'Entire House · 4 beds', 'Entire Apartment · 1 bed', 'Entire Apartment · 3 beds', 'Entire Suite · 4 beds',
@@ -26,8 +14,9 @@ const nameArr = [
     'Attico Su Firenze', 'Casa di Delizie', '海ノ離レ', '日貫一日',
 ];
 
+
 for (let i = 1; i < 101; i += 1) {
-    const records = new Host({
+    const records = new db.Host({
         roomid: i,
         host: [],
 
@@ -59,13 +48,11 @@ for (let i = 1; i < 101; i += 1) {
         records.host.push(singHost);
     }
 
-    // records.save((err) => {
-    //     if (err) {
-    //         console.log(err);
-    //     }
-    // });
+    records.save((err) => {
+        if (err) {
+            console.log('db did not save');
+        } else {
+            console.log('saved')
+        }
+    });
 }
-
-module.exports = {
-    Host,
-};
