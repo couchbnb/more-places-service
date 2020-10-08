@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(`${__dirname}/../client/dist`));
 
-app.get('/data', (req, res) => {
+app.get('/place', (req, res) => {
 // console.log(req.query);
   db.getInfo(req.query, (err, data) => {
     if (err) {
