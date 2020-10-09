@@ -5,6 +5,11 @@ mongoose.connect('mongodb://localhost/couchbnb');
 
 const db = mongoose.connection;
 
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('mongoDB is now connected');
+});
+
 const hostSchema = mongoose.Schema({
   roomid: {
     type: Number,
@@ -17,10 +22,7 @@ const hostSchema = mongoose.Schema({
 const Host = mongoose.model('Host', hostSchema);
 
 const getInfo = (term, cb) => {
-  // console.log(term)
   Host.find(term).exec(cb);
-  // connection.Host.aggregate.sample(1).exec(cb)
-  // Listings.aggregate([{ $sample: { size: 1}}]).exec()
 };
 
 module.exports = {

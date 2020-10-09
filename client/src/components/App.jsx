@@ -27,7 +27,7 @@ class App extends React.Component {
   getHost() {
     const id = Math.floor((Math.random() * 100) + 1);
     axios
-      .get('/data', {
+      .get('/place', {
         params: { roomid: id },
       })
       .then((response) => {
