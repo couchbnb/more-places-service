@@ -137,7 +137,40 @@ padding-top: 5px !important;
     padding-left: 5px !important;
     border-radius: 8px !important;
 `;
-
+const Outside = styled.div`
+display: flex !important;
+align-items: center;
+padding-top: 5px !important;
+    padding-right: 5px !important;
+    padding-bottom: 1px !important;
+    padding-left: 1px !important;
+`;
+const Name = styled.div`
+padding-top: 3px;
+padding-left: 10px;
+color: rgb(34, 34, 34) !important;
+line-height: 20px;
+max-height: 20px;
+overflow: hidden;
+text-overflow: ellipsis;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+font-weight: 560;
+font-size: 16px !important;
+line-height: 20px !important;
+`;
+const Date = styled.div`
+padding-top: 3px;
+padding-left: 10px;
+color: rgb(34, 34, 34) !important;
+line-height: 20px;
+max-height: 20px;
+overflow: hidden;
+text-overflow: ellipsis;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+font-weight: 100;
+font-size: 16px !important;
+line-height: 20px !important;
+`;
 export default function Modal({ onClose }) {
   return (
     <div>
@@ -173,19 +206,28 @@ export default function Modal({ onClose }) {
           </Titlebox>
           <Frame>
             <Box>
-              <Inside>
-                <Pic src="https://couchbnbpic.s3-us-west-1.amazonaws.com/rooooom.jpg" />
+              <Outside>
+                <Inside>
+                <Pic src="https://couchstay.s3-us-west-1.amazonaws.com/couchStay/picsample.webp" />
+                    <Name>Japan</Name>
               </Inside>
+              </Outside>
             </Box>
             <Box>
+            <Outside>
               <Inside>
-                <Pic src="https://couchbnbpic.s3-us-west-1.amazonaws.com/Italy.jpg" />
+                <Pic src="https://couchstay.s3-us-west-1.amazonaws.com/couchStay/picsample2.webp" />
+                <Name>Italy</Name>
               </Inside>
+            </Outside>
             </Box>
             <Box>
+              <Outside>
               <Inside>
-                <Pic src="https://couchbnbpic.s3-us-west-1.amazonaws.com/swan.jpg" />
+                <Pic src="https://couchstay.s3-us-west-1.amazonaws.com/couchStay/picsample3.webp" />
+                <Name>Fiji</Name>
               </Inside>
+              </Outside>
             </Box>
           </Frame>
           <End>

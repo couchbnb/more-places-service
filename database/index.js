@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 
-mongoose.connect('mongodb://mongodb/couchbnb');
+// mongoose.connect('mongodb://mongodb/couchbnb'); active for proxy
+mongoose.connect('mongodb://localhost/couchstay');
 
 const db = mongoose.connection;
 
@@ -12,7 +13,7 @@ db.once('open', () => {
 
 const hostSchema = mongoose.Schema({
   roomid: {
-    type: Number,
+    type: Number, 
   },
   host: {
     type: Array,
